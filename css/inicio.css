@@ -1,8 +1,13 @@
+html {
+    scrollbar-width: none;
+}
+
 
     body {
         margin: 0;
         padding: 0;
         font-family: Arial, sans-serif;
+        background: #e2e4ee;
     }
 
 header{
@@ -10,7 +15,10 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-
+    background: url(../imagenes/fondo\ 1.jpg);
+    background-position: center;
+    background-repeat: none;
+    background-attachment: fixed;
     flex-direction: column;
     z-index: 1; /* Un z-index inferior al del header */
     
@@ -20,20 +28,6 @@ header{
 
 }
 
-
-.imagenfondo {
- display: block;
-}
-.imagenfondo img {
- position: absolute;
- width: 100%;
- height: 100%;
- object-fit: cover; /* Esto garantiza que la imagen se ajuste dentro del contenedor manteniendo su proporción */
- top: 0;
- left: 0;
- z-index: -3;
-
-}
 
 
 
@@ -109,8 +103,10 @@ nav ul li a:hover {
 
 .bienvenidos img {
     max-width: 300px;
+    
     transform: translateY(-220px);
-    transition: .4s ease;
+    transition: .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+
 }
 
 .bienvenidos img:hover {
@@ -120,143 +116,133 @@ nav ul li a:hover {
 .bienvenidos P {
     text-align: center;
     color: #fff;
-    margin-left: 20%;
-    margin-right: 20%;
     transform: translateY(-235px);
     opacity: .6;
 }
 
 
+
 .grid-container {
     display: grid;
-    grid-template-areas:
-        
-    "a b b b b"
-    "a c d d d"
-    "e e e e e" 
-       
-    ;
-    padding: 10px 50px ;
-    gap: 20px 10px;
-    margin-left: 20%;
-    margin-right: 20%;
     justify-content: center;
- 
+    align-items: center;
+    grid-template-areas: 
     
+        "a b"
+        "c d"
+    
+    ;
+    gap: 20px;
+    transform: translateY(-25px);
+
 }
 
-.grid-item {
+.item{
+    display: flex;
+    flex-direction: column;
     background: #fff;
-    box-shadow: 0 0 20px #82addb7e;
-    border-radius: 15px;
+    padding: 10px;
+    width: 400px;
+    height: 300px;
+    border-radius: 25px;
     padding: 20px;
-    transform: translateY(-120px);
-    transition: .5s ease;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 10px 25px #0a152028;
+    view-timeline-name: --image;
+    view-timeline-axis: block ;
+    animation-timeline: --image;
+    animation-name: marco-hs;
+    animation-range: entry 25% cover 20%;
+    animation-fill-mode: both;
+    background-attachment: fixed;
 
+
+
+    img{
+      max-width: 20px;
+      opacity: .3;
+    }
 }
 
-.grid-item:nth-child(1) {
+
+.item a {
+    text-decoration: none;
+    color: #fff;
+    background: #0077ff;
+    padding: 10px  50px;
+    border-radius: 25px;
+    transition: .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.item a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: #2586f5;
+    padding: 10px  55px;
+    border-radius: 25px;
+}
+
+.item:nth-child(1) {
     grid-area: a;
 
-    background-image: url(/imagenes/oracion-1.jpg);
-    background-size: cover;
+    background: url(../imagenes/img\ 9.jpg);
     background-position: center;
-    padding: 100px;
-}
+    background-size: cover;
 
-.img1 {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Esto garantiza que la imagen se ajuste dentro del contenedor manteniendo su proporción */
-    top: 0;
-    left: 0;
-    border-radius: 15px;
 }
-.img1 img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Esto garantiza que la imagen se ajuste dentro del contenedor manteniendo su proporción */
-    top: 0;
-    left: 0;
-    border-radius: 15px;
-}
-.grid-item:nth-child(2) {
+.item:nth-child(2) {
     grid-area: b;
-    background: #ffffffe5;
-    backdrop-filter: blur(10px);
-    box-shadow: none;
-  
-
-
+    img{
+        max-width: 20px;
+        scale: 2;
+      }
 }
-
-.grid-item:nth-child(3) {
+.item:nth-child(3) {
     grid-area: c;
-    background: #ffffff00;
-    backdrop-filter: blur(10px);
-  
+    img{
+        max-width: 25px;
+        scale: 2;
+      }
 }
-
-.grid-item:nth-child(4) {
+.item:nth-child(4) {
     grid-area: d;
-    background-image: url(/imagenes/oracion-1.jpg);
-    background-size: cover;
+    background: url(../imagenes/oracion-1.jpg);
     background-position: center;
-    padding: 100px;
-
-
-}
-.grid-item:nth-child(5) {
-    grid-area: e;
-    background: #ffffff9d;
-    backdrop-filter: blur(10px);
-   
+    background-size: cover;
 }
 
-.grid-item:hover{
-    transform: translateY(-130px);
-    transform: rotate(36°);
-    /* box-shadow: 0px 15px 15px #17335057; */
-}
 
-.imagen-item {
-    display: block;
-}
 
-.imagen-item img {
-    width: 300px;
-    height: 500px;
-}
-
-.container1 img {
-    max-width: 30px;
-    opacity: .5;
-}
-
-.container1 a {
-    text-decoration: none;
-    color: #242424;
-    font-size: 20px;
-    padding: 10px;
-    transition: .4s ease;
-    border-radius: 15px;
-}
-
-.container1 a:hover{
-    color: #fff;
-    background: #173350;
-    border-radius: 25px;
-} 
 
 .container-live{
     display: flex;
+    view-timeline-name: --image;
+    view-timeline-axis: block ;
+    animation-timeline: --image;
+    animation-name: marco-lv;
+    animation-range: entry 25% cover 50%;
+    animation-fill-mode: both;
 
 }
 
 .container-live img {
     max-width: 100%;
+
+}
+
+@keyframes marco-lv  {
+    from {
+        scale: 2;
+        box-shadow: 0 0px 5px #030b0f7c;
+        opacity: 0;
+        transform: translateY(555px);
+    }
+
+    to {
+        scale: 1;
+    }
 }
 
 
@@ -264,11 +250,17 @@ nav ul li a:hover {
 .horario {
     background: #24242400;
     gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 9%;
 }
 
 .titulo-horario-contenedor {
     display: flex;
-    justify-content: end;
+    justify-content: center;
+    transform: translateX(-50%);
 }
 
 .titulo-horario {
@@ -290,10 +282,30 @@ nav ul li a:hover {
     gap: 10px;
     background: #48a7ff;
     padding: 0 10px;
-    margin: 0 5%;
+
     border-radius: 15px;
     transition: .3s ease-in-out;
     margin-bottom: 10px;
+    width: 70%;
+    height: 80px;
+    view-timeline-name: --image;
+    view-timeline-axis: block ;
+    animation-timeline: --image;
+    animation-name: marco-hs;
+    animation-range: entry 25% cover 50%;
+    animation-fill-mode: both;
+}
+
+@keyframes marco-hs  {
+    from {
+        scale: .4;
+        box-shadow: 0 0px 5px #030b0f7c;
+        opacity: 0;
+    }
+
+    to {
+        scale: 1;
+    }
 }
 
 .servicioscontainer{
@@ -304,27 +316,27 @@ nav ul li a:hover {
 
 .servicioscontainer h1 {
     color: #fff;
-    font-size: 45px;
+    font-size: 25px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     transform: translateX(0px);
     transition: .3s ease-in-out;
 }
 
 .servicioscontainer h2 {
-    color: #fff;
-    font-size: 45px;
+    color: #ffffffb7;
+    font-size: 25px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    transform: translateX(455px);
+
     transition: .3s ease-in-out;
 }
 
 .servicioscontainer h3 {
     color: #fff;
-    font-size: 45px;
+    font-size: 25px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     transform: translateX(0px);
     transition: .3s ease-in-out;
-    opacity: 0;
+    opacity: 1;
 }
 
 
@@ -334,27 +346,7 @@ nav ul li a:hover {
     background: #3791f8;
 
     cursor: pointer;
-    .servicioscontainer h1 {
-        font-size: 45px;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        transform: translateX(25px);
-    }
-    .servicioscontainer h2 {
-        color: #fff;
-        font-size: 45px;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        transform: translateX(0px);
-        transition: .3s ease-in-out;
-    }
-    
-    .servicioscontainer h3 {
-        color: #fff;
-        font-size: 45px;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        transform: translateX(0px);
-        transition: .3s ease-in-out;
-        opacity: 1;
-    }
+
     
 }
 
@@ -365,6 +357,7 @@ footer {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    text-align: center;
     
 }
 .footer-container {
@@ -373,6 +366,7 @@ footer {
     display: flex;
     align-items: center;
     flex-direction: column;
+    text-align: center;
 
 }
 
@@ -489,6 +483,35 @@ footer {
     }
     
 
+    .item{
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        padding: 10px;
+        width: 300px;
+        height: 250px;
+        border-radius: 25px;
+        padding: 20px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        box-shadow: 0 10px 25px #0a152028;
+        view-timeline-name: --image;
+        view-timeline-axis: block ;
+        animation-timeline: --image;
+        animation-name: marco-hs;
+        animation-range: entry 25% cover 20%;
+        animation-fill-mode: both;
+        background-attachment: fixed;
+    
+    
+    
+        img{
+          max-width: 20px;
+          opacity: .3;
+        }
+    }
+
 
     .bienvenidos h1 {
         color: #fff;
@@ -539,61 +562,19 @@ footer {
     .servicioscontainer{
         display: flex;
         justify-content: center;
-        text-align: justify;
+        text-align: center;
         gap: 5px;
     }
     
-    .servicioscontainer h1 {
-        color: #fff;
-        font-size: 15px;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        transform: translateX(0px);
-        transition: .3s ease-in-out;
-    }
-    
-    .servicioscontainer h2 {
-        color: #fff;
-        font-size: 15px;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        transform: translateX(0px);
-        transition: .3s ease-in-out;
-    }
-    
-    .servicioscontainer h3 {
-        color: #fff;
-        font-size: 15px;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        transform: translateX(0px) translateY(-2px);
-        transition: .3s ease-in-out;
-        opacity: 1;
-    }
+   
     
     .servicios:hover {
         transform: translateY(-5px);
         background: #3791f8;
     
         cursor: pointer;
-        .servicioscontainer h1 {
-            font-size: 15px;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            transform: translateX(-5px);
-        }
-        .servicioscontainer h2 {
-            color: #fff;
-            font-size: 15px;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            transform: translateX(0px);
-            transition: .3s ease-in-out;
-        }
         
-        .servicioscontainer h3 {
-            color: #fff;
-            font-size: 15px;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            transform: translateX(0px) translateY(-2px);
-            transition: .3s ease-in-out;
-            opacity: 1;
-        }
+       
         
     }
 
@@ -633,8 +614,9 @@ footer {
         color: #fff;
         margin-left: 0;
         margin-right: 0;
-        transform: translateY(-235px);
+        transform: translateY(0);
         opacity: .6;
+        
     }
     
 
@@ -655,6 +637,40 @@ footer {
         margin-right: 0;
         
     }
+
+
+    .item{
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        padding: 10px;
+        width: 300px;
+        height: 250px;
+        border-radius: 25px;
+        padding: 20px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        box-shadow: 0 10px 25px #0a152028;
+        view-timeline-name: --image;
+        view-timeline-axis: block ;
+        animation-timeline: --image;
+        animation-name: marco-hs;
+        animation-range: entry 25% cover 20%;
+        animation-fill-mode: both;
+        background-attachment: fixed;
+    
+    
+    
+        img{
+          max-width: 20px;
+          opacity: .3;
+        }
+    }
+    
+
+
+
     .bienvenidos h1 {
         color: #fff;
         font-size: 60px;
@@ -674,6 +690,7 @@ footer {
         display: flex;
         justify-content: center;
         text-align: center;
+        transform: translateX(5px);
     }
     
     .titulo-horario {
@@ -839,6 +856,7 @@ footer {
         display: flex;
         justify-content: center;
         text-align: center;
+        transform: translateX(5px);
     }
     
     .titulo-horario {
@@ -853,17 +871,19 @@ footer {
     .titulo-horario h1{
         font-size: 49px;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        transform: translateY(-38px);
+        transform: translateY(0px);
     }
 
     .servicios {
         gap: 5px;
         background: #48a7ff;
-        padding: 0 4px;
+        padding: 0 0px;
         margin: 0 5%;
         border-radius: 15px;
         border: solid 2px #56a8f5;
         margin-bottom: 10px;
+        width: 300px;
+        height: 30px;
     }
 
     .servicioscontainer{
@@ -1038,15 +1058,7 @@ footer {
     }
     
 
-    .bienvenidos P {
-        text-align: center;
-        color: #fff;
-        margin-left:  20%;
-        margin-right: 20%;
-        transform: translateY(-235px);
-        opacity: .6;
-        font-size: 10px;
-    }
+
     .logo-jarts-footer img {
 
         max-width: 200px;
